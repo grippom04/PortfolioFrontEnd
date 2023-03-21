@@ -1,0 +1,7 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    border-radius: 20;
+    padding: 10px;
+}
