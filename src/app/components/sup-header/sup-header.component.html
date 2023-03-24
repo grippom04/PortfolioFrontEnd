@@ -1,12 +1,40 @@
+<!--
+
+
 <div id="div-general">
-    
+
     <div id="div-left">
         <app-aplogo></app-aplogo>
     </div>
     
     <div id="div-right">
-        <app-log-button></app-log-button>
+        
         <app-social-links></app-social-links>
+        <app-log-button></app-log-button>
     </div>
 
 </div>
+
+-->
+
+<div class="container-fluid">
+    <div class="row" id="main-row">
+
+        <div class="col-2" id="left">
+            <app-aplogo></app-aplogo>
+        </div>
+
+        <div class="col-4" id="right">
+            <div class="row" id="sub-row">
+                    <div class="col-6">
+                        <app-social-links></app-social-links>
+                    </div>
+                    <div class="col-6">
+                        <app-log-button></app-log-button>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+</div>    
+
