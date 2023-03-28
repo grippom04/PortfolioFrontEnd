@@ -17,5 +17,8 @@
     display: flex;
     justify-content: space-between;
 }
-
+.row{
+    display: flex;
+    justify-content: space-between;
+}
 

@@ -1,0 +1,23 @@
+.container-fluid{
+    margin-top: 10px;
+    border-radius: 10px;
+    border: thick double black;
+    background-color: rgba(151, 150, 148, 0.429);
+    justify-content: stretch;
+}
+.row1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.row2{    
+    display: flex;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: solid 1px black;;
+}
+img{
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+}

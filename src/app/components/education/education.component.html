@@ -1,0 +1,44 @@
+<div class="container-fluid">
+
+    <div class="row1">
+        <div class="col-11">
+            <h1>Educacion</h1>
+        </div>
+        <div class="col-1">
+            <app-button
+             text="Agregar"
+             >
+            </app-button>
+        </div>
+
+    </div>
+    
+    <ul style="list-style: none;">
+        <li *ngFor="let item of educationList">
+            <div class="row2">
+                <div class="col-1">
+                    <img
+                        *ngIf="item.img_url === null"  
+                        src="../../../assets/Img/img_notFound.png" 
+                    >
+                    <img
+                        *ngIf="item.img_url !== null"  
+                        [src]="item.img_url" 
+                    >
+                </div>
+                <div class="col-10">
+                    <h2>{{item.institute_name}}</h2>
+                    <h4>{{item.title}}</h4>
+                    <h4>Desde: <time>{{item.start_date}}</time> - <time>Hasta: {{item.end_date}}</time></h4>
+                    
+                </div>
+                <div class="col-1">
+                    <h1>Aca va algo</h1>
+                </div>
+            </div>
+        </li>
+    </ul>
+ 
+
+
+</div>
