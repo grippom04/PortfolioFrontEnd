@@ -1,12 +1,5 @@
 {
-    "person" :[
-        {
-        "name" : "Miguel",
-        "last-name" : "Grippo",
-        "img_url" : null,
-        "desc" : "Estudiante de programacion"
-        }
-    ],
+
     "wexperience" : [
         {
         "img_url" : null,

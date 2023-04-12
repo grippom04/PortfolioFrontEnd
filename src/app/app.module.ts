@@ -13,6 +13,10 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { HttpClientModule } from '@angular/common/http';
 import { EducationComponent } from './components/education/education.component';
 import { SkilsComponent } from './components/skils/skils.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -28,13 +32,17 @@ import { SkilsComponent } from './components/skils/skils.component';
     ExperienceComponent,
     EducationComponent,
     SkilsComponent,
+    HomeComponent,
+    LoginComponent,
 
 
   ],
   imports: [
     BrowserModule,
     NgCircleProgressModule.forRoot({}),
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
