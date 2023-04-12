@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-button',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class LogButtonComponent {
 
+    constructor(private r:Router){}
+
+    ngOnInit() {}
+
+    login() {this.r.navigate(['/login']);}
 }

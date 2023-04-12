@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="row" id="main-row">
+        <div class="col-4">
+            <div class="row" id="sub-row">
+                <div class="row-6">
+                    <div *ngIf="p.img!=null">
+                        <img src={{p.img}} class="img-fluid">
+                    </div>
+                    <div *ngIf="p.img">
+                    <img src="../../../assets/Img/perfil.jpg" class="img-fluid">
+                    </div>        
+                </div>
+                <div class="row-6">
+                    <h1 style="margin-top: 20px;">{{p.nombre}} {{p.apellido}}</h1>
+                <p>Full Stack Developer Jr</p>
+                </div>                 
+            </div>    
+        </div>
+        <div class="col-1"></div>
+        <div class="col-7">
+            <h1 style="margin-top: 30px; margin-bottom: 10px;">Acerca de mi</h1>
+            <p>{{p.descripcion}}</p>
+        </div>
+    </div>
+</div>
