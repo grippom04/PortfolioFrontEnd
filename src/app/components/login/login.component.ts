@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AutenticationService } from 'src/app/services/autentication.service';
+import { LoguinUser } from 'src/app/model/loguin-user';
+import { AuthService } from 'src/app/services/auth.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-login',
@@ -11,34 +12,45 @@ import { AutenticationService } from 'src/app/services/autentication.service';
 
 export class LoginComponent {
 
-  form:FormGroup;
+  isLogged=false;
+  isLoguinFail=false;
+  loguinUser!:LoguinUser;
+  nombreUsuario! : string;
+  password! : string;
+  roles : string[] = [];
+  errorMsj! : string;
+  
 
-  constructor(private formBuilder:FormBuilder, private autenticationService:AutenticationService,private router:Router){
-    
-    this.form = formBuilder.group({
-
-      email:['',[Validators.email,Validators.required]],
-      password:['',[Validators.required, Validators.minLength(8)]],
-      deviceInfo:this.formBuilder.group({
-        deviceId:[""],
-        deviceType:[""],
-        notificationToken:[""] })
-    })
+  constructor(private router:Router,private tokenService:TokenService, private authService:AuthService){
+        
   }
 
-  get Email() {
-    return this.form.get('email');
+  ngOnInit() {
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+      this.isLoguinFail=false;
+      this.roles=this.tokenService.getAthorities();
+    }    
   }
 
-  get Password() {
-    return this.form.get('password');
+  onLogin(): void{
+    this.loguinUser = new LoguinUser(this.nombreUsuario, this.password); 
+    console.log(this.nombreUsuario);
+    this.authService.loguin(this.loguinUser).subscribe(data =>{
+        this.isLogged = true;
+        this.isLoguinFail = false;
+        this.tokenService.setToken(data.token);
+        this.tokenService.setUserName(data.nombreUsuario);
+        this.tokenService.setAthorities(data.authorities);
+        this.roles = data.authorities;
+        this.router.navigate([''])
+      }, err =>{
+        this.isLogged = false;
+        this.isLoguinFail = true;
+        this.errorMsj = err.error.mensaje;
+        console.log(this.errorMsj);
+        
+      })
   }
 
-  sendCredentials(event:Event){
-    event.preventDefault();
-    this.autenticationService.LogIn(this.form.value).subscribe(data=>{
-      console.log("Data"+ JSON.stringify(data));
-      this.router.navigate(['']);
-    })   
-  }
 }
