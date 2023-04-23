@@ -19,7 +19,18 @@
     background-color: rgba(133, 133, 82, 0.075);
 }
 img{
-    margin: 10px;
-    height: 100px;
-    width: 100px;
+    height: 100%;
+    width: 100%;
+}
+#imgContainer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 3px;
+    margin-right: 5px;
+    
+}
+#expBtn{
+    display: flex;
+    justify-content: flex-end;
 }

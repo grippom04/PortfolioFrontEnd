@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ServService } from 'src/app/services/serv.service';
+import { Experiencia } from 'src/app/model/experiencia';
+import { ExperienciaServiceService } from 'src/app/services/experiencia-service.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-experience',
@@ -8,12 +10,27 @@ import { ServService } from 'src/app/services/serv.service';
 })
 export class ExperienceComponent {
   
-  constructor(private dataServ:ServService){}
+  constructor(private experienciaService: ExperienciaServiceService,private tokenService : TokenService){}
 
-  experienceList:any;
-
+  isLogged=false;
+  listaExperiencia:Experiencia[]=[];
+  
   ngOnInit() {
-    this.dataServ.getData().subscribe(data =>{ this.experienceList=data.wexperience; });
+    this.CargarExperiencia();
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+    }
+    else{
+      this.isLogged=false;
+    }
   }
+
+  public CargarExperiencia():void {
+    this.experienciaService.getAllExperiencia().subscribe(data =>{
+      this.listaExperiencia = data;
+      console.log(this.listaExperiencia);
+      })
+  }
+
 }
     

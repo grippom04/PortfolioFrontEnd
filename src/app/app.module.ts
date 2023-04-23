@@ -18,6 +18,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import {FormsModule} from '@angular/forms';
 import { interceptorProvider } from './services/interceptor-service';
+import { NewExpComponent } from './components/new-exp/new-exp.component';
 
 
 
@@ -34,9 +35,8 @@ import { interceptorProvider } from './services/interceptor-service';
     EducationComponent,
     SkilsComponent,
     HomeComponent,
-    LoginComponent,
-    
-
+    LoginComponent,  
+    NewExpComponent
 
   ],
   imports: [
