@@ -1,6 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { SupHeaderComponent } from './components/sup-header/sup-header.component';
 import { SocialLinksComponent } from './components/social-links/social-links.component';
@@ -16,11 +15,15 @@ import { SkilsComponent } from './components/skils/skils.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
-import {FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { interceptorProvider } from './services/interceptor-service';
 import { NewExpComponent } from './components/new-exp/new-exp.component';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { defineLocale } from 'ngx-bootstrap/chronos';
+import { esLocale } from 'ngx-bootstrap/locale';
 
-
+defineLocale('es', esLocale);
 
 @NgModule({
   declarations: [
@@ -44,8 +47,13 @@ import { NewExpComponent } from './components/new-exp/new-exp.component';
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
+    ReactiveFormsModule
+
   ],
+
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     interceptorProvider

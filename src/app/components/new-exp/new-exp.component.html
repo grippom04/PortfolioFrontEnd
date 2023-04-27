@@ -12,16 +12,54 @@
   
                 <form #f="ngForm" (ngSubmit)="onCreate()" novalidate>
   
-                  <div class="form-outline form-white mb-4">
-                    <label for="nombre_trabajo">Nombre de la Empresa</label>
-                    <input type="text" class="form-control" id="nombre_compania" name="nombre_compania" [(ngModel)]="nombre_compania" required/>
+                  <div class="container">
+
+                    <div class="row">
+                      <div class="col-mb-4">
+                        <div class="mb-4 " form-gruop>
+                          <label class="form-label">Nombre de la Empresa</label>
+                          <input type="text" class="form-control" id="nombre_compania" name="nombre_compania" [(ngModel)]="nombre_compania" required/>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-mb-4">
+                        <div class="mb-4" form-gruop>
+                          <label class="form-label">Nombre del Puesto</label>
+                          <input type="text" class="form-control" id="nombre_trabajo" name="nombre_trabajo" [(ngModel)]="nombre_trabajo" required/>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-mb-4">
+                        <div class="mb-4" form-gruop>
+                          <label class="form-label">Fecha de Inicio</label>
+                          <input type="text" class="form-control" id="fecha_inicio" name="fecha_inicio" [(ngModel)]="fecha_inicio" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-mb-4">
+                        <div class="mb-4" form-gruop>
+                          <label class="form-label">Fecha de Fin</label>
+                          <input type="text" class="form-control" id="fecha_fin" name="fecha_fin" [(ngModel)]="fecha_fin" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-mb-4">
+                        <div class="mb-4" form-gruop>
+                          <label class="form-label">Descripcion</label>
+                          <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="descripcion" required/>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
-  
-                  <div class="form-outline form-white mb-4">
-                    <label for="nombre_trabajo">Nombre del Puesto</label>
-                    <input type="text" class="form-control" id="nombre_trabajo" name="nombre_trabajo" [(ngModel)]="nombre_trabajo" required/>
-                  </div>
-                  
                   <button class="btn btn-outline-light btn-lg px-5" type="submit">Terminar</button>
   
                 </form>
