@@ -1,18 +1,17 @@
-export class Experiencia {
-
+export class Educacion {
     id! : number;
     img : string;
-    nombre_trabajo: string;
-    nombre_compania: string;
+    nombre_titulo: string;
+    nombre_colegio: string;
     fecha_inicio: string;
     fecha_fin: string;
     descripcion: string;
     
-    constructor(img: string, nombre_trabajo: string,nombre_compania: string,fecha_inicio: string,
+    constructor(img: string, nombre_titulo: string,nombre_colegio: string,fecha_inicio: string,
         fecha_fin: string,descripcion: string){
 
-            this.nombre_trabajo = nombre_trabajo;
-            this.nombre_compania = nombre_compania;
+            this.nombre_titulo = nombre_titulo;
+            this.nombre_colegio = nombre_colegio;
             this.fecha_inicio = fecha_inicio;
             this.fecha_fin = fecha_fin;
             this.descripcion = descripcion;
@@ -25,5 +24,4 @@ export class Experiencia {
     public getId():number{
         return this.id;
     }
-    
 }

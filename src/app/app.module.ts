@@ -22,6 +22,9 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { esLocale } from 'ngx-bootstrap/locale';
+import { EditExpComponent } from './components/edit-exp/edit-exp.component';
+import { NewEduComponent } from './components/new-edu/new-edu.component';
+import { EditEduComponent } from './components/edit-edu/edit-edu.component';
 
 defineLocale('es', esLocale);
 
@@ -39,7 +42,7 @@ defineLocale('es', esLocale);
     SkilsComponent,
     HomeComponent,
     LoginComponent,  
-    NewExpComponent
+    NewExpComponent, EditExpComponent, NewEduComponent, EditEduComponent
 
   ],
   imports: [

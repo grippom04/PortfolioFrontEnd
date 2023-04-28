@@ -6,11 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ServService {
-  
+
+
+
   constructor(private http:HttpClient)
    { }
 
    getData():Observable<any>
     { return this.http.get("../../../assets/data/data.json") }
+
+  
+     
     
 }
