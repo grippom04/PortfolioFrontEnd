@@ -2,17 +2,20 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Persona } from '../model/persona.model';
+import { Switch } from '../model/switch';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonaService {
-  url:String ='http://localhost:8080/persona';
+
+  perURL = Switch.url+'/persona';
 
   constructor(private http:HttpClient) {}
 
   public getPerson():Observable<Persona>{
-    console.log("getAll");
-    return this.http.get<Persona>(this.url +'/getAll'); 
+    console.log(this.perURL);
+    return this.http.get<Persona>(this.perURL +'/getAll'); 
   }
 }

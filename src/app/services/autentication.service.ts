@@ -8,17 +8,14 @@ import { map } from 'rxjs/operators';
 })
 export class AutenticationService {
 
-  url='http://localhost:8080';
+  url='https://portfoliofrontend-3f1ea.web.app';
   currenUserSubject:BehaviorSubject<any>;
 
   constructor(private http:HttpClient) {
-
-    console.log("Andaa!!!!!");
     this.currenUserSubject = new BehaviorSubject<any>('currenUser' );
   }
 
   LogIn(credenciales:any):Observable<any> {
-    console.log("Se llamo al metodo de logueo");
     return this.http.get(this.url,credenciales).pipe(map(data=>{
 
       sessionStorage.setItem('currenUser',JSON.stringify(data));

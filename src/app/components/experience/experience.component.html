@@ -1,39 +1,58 @@
 <div class="container-fluid">
 
     <div class="row1">
-        <div class="col-11">
+        <div class="col-11" >
             <h1>Experiencia</h1>
         </div>
-        <div class="col-1">
-            <app-button
-             text="Agregar"
-             >
-            </app-button>
+        <div class="col-1" id="expBtn">
+            <button type="button" class="btn btn-outline-secondary" style="width: 100px; height: 70;" 
+            *ngIf="isLogged" routerLink="/new-exp" >
+                <i class="bi bi-file-earmark-plus"></i>
+                
+            </button>
         </div>
 
     </div>
     
     <ul style="list-style: none;">
-        <li *ngFor="let item of experienceList">
-            <div class="row2">
-                <div class="col-1">
-                    <img
-                        *ngIf="item.img_url === null"  
-                        src="../../../assets/Img/img_notFound.png" 
-                    >
-                    <img
-                        *ngIf="item.img_url !== null"  
-                        [src]="item.img_url" 
-                    >
+        <li *ngFor="let item of listaExperiencia; let i =index;" >
+            <div class="row2">                
+                <div class="col-2" id="imgContainer">
+                 
+                    <ng-container *ngIf="item.img && item.img.trim() !== ''; else emptyState">
+                        <img src={{item.img}}>
+                      </ng-container>
+                      
+                      <ng-template #emptyState>
+                        <img src="../../../assets/Img/img_notFound.png">
+                      </ng-template>
+
                 </div>
-                <div class="col-10">
-                    <h2>{{item.job_title}}</h2>
-                    <h4>{{item.company_name}}</h4>
-                    <h4>Desde: <time>{{item.start_date}}</time> - <time>Hasta: {{item.end_date}}</time></h4>
-                    <p>{{item.desc}}</p>
+
+                <div class="col-9">
+                    <h2>{{item.nombre_trabajo}}</h2>
+                    <h4>{{item.nombre_compania}}</h4>
+                    <h4>Desde: <time>{{item.fecha_inicio | date:'shortDate'}}</time> - <time>
+                        Hasta: {{item.fecha_fin | date:'shortDate'}}</time></h4>
+                    <p>{{item.descripcion}}</p>
+                    <p>{{item.descripcion}}</p>                   
                 </div>
-                <div class="col-1">
-                    <h1>Aca va algo</h1>
+                <div class="col-1" id=icon-edit>                          
+                    <div>
+                        <button type="button" class="btn btn-outline-secondary" (click)="onEdit(i)" *ngIf="isLogged">
+                            <i class="bi bi-pencil-square" ></i>
+                        </button>
+                    </div>
+
+                    <div>
+                        <button type="button" class="btn btn-outline-secondary" (click)="onDelet(i)" *ngIf="isLogged">
+                            <div>
+                                <i class="bi bi-trash" ></i>                               
+                            </div>
+                        </button>
+                    </div>
+                    
+                    
                 </div>
             </div>
         </li>

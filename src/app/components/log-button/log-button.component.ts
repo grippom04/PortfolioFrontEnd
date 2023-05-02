@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-log-button',
@@ -8,9 +9,14 @@ import { Route, Router } from '@angular/router';
 })
 export class LogButtonComponent {
 
-    constructor(private r:Router){}
+    constructor(private r:Router, private tokenService : TokenService){}
 
     ngOnInit() {}
 
     login() {this.r.navigate(['/login']);}
+
+    logOut(){
+      this.tokenService.logOut();
+      window.location.reload();
+    }
 }
