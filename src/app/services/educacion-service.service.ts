@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Educacion } from '../model/educacion';
+import { Switch } from '../model/switch';
 
 @Injectable({
   providedIn: 'root'
@@ -10,29 +11,29 @@ import { Educacion } from '../model/educacion';
 
 export class EducacionServiceService {
 
-  url:String ='http://localhost:8080/educacion';
+  eduURL = Switch.url+'/educacion';
   id! : number;
 
   constructor(private http:HttpClient) {}
 
   public getAllEducacion(): Observable<Educacion[]>{
-    return this.http.get<Educacion[]>(this.url+'/getAll')
+    return this.http.get<Educacion[]>(this.eduURL+'/getAll')
   }
 
   public getEducacion(id:number): Observable<Educacion>{
-    return this.http.get<Educacion>(this.url + `/get/${id}`)
+    return this.http.get<Educacion>(this.eduURL + `/get/${id}`)
   }
 
   public setEducacion (e : Educacion)  : Observable<any>{
-    return this.http.post<Educacion>(this.url + '/set', e)
+    return this.http.post<Educacion>(this.eduURL + '/set', e)
   }
 
   public editEducacion(e : Educacion) : Observable<any>{
-    return this.http.put<any>(this.url + '/edit',e)
+    return this.http.put<any>(this.eduURL + '/edit',e)
   }
 
   public wipeEducacion(id : number) : Observable<any>{
-    return this.http.delete<any>(this.url + `/delete/${id}`)
+    return this.http.delete<any>(this.eduURL + `/delete/${id}`)
   }
 
   public setId(i: number): void {

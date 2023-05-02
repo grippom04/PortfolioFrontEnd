@@ -37,8 +37,7 @@ this.experienciaService.getExperiencia(pos).subscribe(data =>{
 onEdit():void{
   const e =  new Experiencia(this.img,this.nombre_trabajo,this.nombre_compania,this.fecha_inicio,
                                     this.fecha_fin,this.descripcion);
-  e.setId(this.experienciaService.getId()); 
-  console.log(e);                          
+  e.setId(this.experienciaService.getId());                          
   this.experienciaService.editExperiencia(e).subscribe(data =>{
     alert("Experiencia Modificada");
     this.router.navigate(['']);

@@ -25,6 +25,9 @@ import { esLocale } from 'ngx-bootstrap/locale';
 import { EditExpComponent } from './components/edit-exp/edit-exp.component';
 import { NewEduComponent } from './components/new-edu/new-edu.component';
 import { EditEduComponent } from './components/edit-edu/edit-edu.component';
+import { NewSkillComponent } from './components/new-skill/new-skill.component';
+import { ColorPickerModule } from 'ngx-color-picker';
+import { EditSkillComponent } from './components/edit-skill/edit-skill.component';
 
 defineLocale('es', esLocale);
 
@@ -42,7 +45,8 @@ defineLocale('es', esLocale);
     SkilsComponent,
     HomeComponent,
     LoginComponent,  
-    NewExpComponent, EditExpComponent, NewEduComponent, EditEduComponent
+    NewExpComponent, EditExpComponent, NewEduComponent, EditEduComponent, NewSkillComponent, EditSkillComponent,
+    
 
   ],
   imports: [
@@ -53,8 +57,9 @@ defineLocale('es', esLocale);
     FormsModule,
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    ColorPickerModule
+    
   ],
 
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -3,12 +3,13 @@
         <div class="col-4">
             <div class="row" id="sub-row">
                 <div class="row-6">
-                    <div *ngIf="p.img!=null">
+                      <ng-container *ngIf="p.img.trim() !== '' || p.img!=='null' ; else emptyState">
                         <img src={{p.img}} class="img-fluid">
-                    </div>
-                    <div *ngIf="p.img">
-                    <img src="../../../assets/Img/perfil.jpg" class="img-fluid">
-                    </div>        
+                      </ng-container>
+                      
+                      <ng-template #emptyState>
+                        <img src="../../../assets/Img/perfil.jpg" class="img-fluid">
+                      </ng-template>       
                 </div>
                 <div class="row-6">
                     <h1 style="margin-top: 20px;">{{p.nombre}} {{p.apellido}}</h1>

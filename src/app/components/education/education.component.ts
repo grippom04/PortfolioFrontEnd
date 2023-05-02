@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionServiceService } from 'src/app/services/educacion-service.service';
-import { ServService } from 'src/app/services/serv.service';
 import { TokenService } from 'src/app/services/token.service';
 
 @Component({
