@@ -25,6 +25,7 @@
     "date-fns": "^2.29.3",
     "jquery": "^3.6.4",
     "ng-circle-progress": "^1.7.1",
+    "ngp-image-picker": "^2.4.4",
     "ngx-bootstrap": "^10.2.0",
     "ngx-color-picker": "^14.0.0",
     "rxjs": "~7.8.0",

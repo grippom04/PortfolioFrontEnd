@@ -1,5 +1,7 @@
+import { ImageConfig } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ImagePickerConf } from 'ngp-image-picker';
 import { Skill } from 'src/app/model/skill';
 import { SkillServiceService } from 'src/app/services/skill-service.service';
 
@@ -35,6 +37,13 @@ export class NewSkillComponent {
       })
                                    
   }
+
+  Conf: ImagePickerConf  = {
+    borderRadius: '4px',
+    language: 'en',
+    width: '320px',
+    height: '240px',
+  };
 
 }
 

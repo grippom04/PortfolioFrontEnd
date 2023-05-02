@@ -11,11 +11,35 @@ import { Switch } from '../model/switch';
 export class PersonaService {
 
   perURL = Switch.url+'/persona';
+  id! : number;
 
   constructor(private http:HttpClient) {}
 
-  public getPerson():Observable<Persona>{
-    console.log(this.perURL);
-    return this.http.get<Persona>(this.perURL +'/getAll'); 
+  public getAllPersona(): Observable<Persona[]>{
+    return this.http.get<Persona[]>(this.perURL+'/getAll')
+  }
+
+  public getPersona(id:number): Observable<Persona>{
+    return this.http.get<Persona>(this.perURL + `/get/${id}`)
+  }
+
+  public setPersona (e : Persona)  : Observable<any>{
+    return this.http.post<Persona>(this.perURL + '/set', e)
+  }
+
+  public editPersona(e : Persona) : Observable<any>{
+    return this.http.put<any>(this.perURL + '/edit',e)
+  }
+
+  public wipePersona(id : number) : Observable<any>{
+    return this.http.delete<any>(this.perURL + `/delete/${id}`)
+  }
+
+  public setId(i: number): void {
+    this.id = i;
+    
+  } 
+  public getId(): number {
+    return this.id;
   }
 }

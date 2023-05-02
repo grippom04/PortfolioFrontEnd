@@ -1,6 +1,6 @@
 export class Persona {
 
-    id?: number;
+    id!: number;
     nombre: string;
     apellido: string;
     descripcion: string;
@@ -16,6 +16,11 @@ export class Persona {
         this.img = img; 
     }
 
-    setNombre(nombre: string){this.nombre = nombre;}
+    public setId(id:number):void{
+        this.id = id;
+    }
+    public getId():number{
+        return this.id;
+    }
 
 }
