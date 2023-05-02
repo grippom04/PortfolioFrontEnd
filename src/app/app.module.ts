@@ -28,6 +28,8 @@ import { EditEduComponent } from './components/edit-edu/edit-edu.component';
 import { NewSkillComponent } from './components/new-skill/new-skill.component';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { EditSkillComponent } from './components/edit-skill/edit-skill.component';
+import { NgpImagePickerModule } from 'ngp-image-picker';
+import { EditPerComponent } from './components/edit-per/edit-per.component';
 
 defineLocale('es', esLocale);
 
@@ -45,7 +47,7 @@ defineLocale('es', esLocale);
     SkilsComponent,
     HomeComponent,
     LoginComponent,  
-    NewExpComponent, EditExpComponent, NewEduComponent, EditEduComponent, NewSkillComponent, EditSkillComponent,
+    NewExpComponent, EditExpComponent, NewEduComponent, EditEduComponent, NewSkillComponent, EditSkillComponent, EditPerComponent,
     
 
   ],
@@ -58,7 +60,8 @@ defineLocale('es', esLocale);
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
     ReactiveFormsModule,
-    ColorPickerModule
+    ColorPickerModule,
+    NgpImagePickerModule
     
   ],
 
