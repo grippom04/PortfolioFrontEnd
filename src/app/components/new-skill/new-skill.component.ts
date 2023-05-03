@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ImagePickerConf } from 'ngp-image-picker';
 import { Skill } from 'src/app/model/skill';
+import { ImageServiceService } from 'src/app/services/image-service.service';
 import { SkillServiceService } from 'src/app/services/skill-service.service';
 
 @Component({
@@ -20,7 +21,7 @@ export class NewSkillComponent {
   innerColor:string = '#f8c679';
   nombre:string =  "Sin Nombre";
 
-  constructor(private skillService: SkillServiceService, private router:Router){
+  constructor(private skillService: SkillServiceService, private router:Router,public imageService : ImageServiceService){
 
 
   }
@@ -39,7 +40,8 @@ export class NewSkillComponent {
   }
 
   onAction($event : any){
-    
+    const name = "Foto-perfil"
+    this.imageService.upLoadImages($event,name)
   }
 
   

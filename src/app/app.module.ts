@@ -15,13 +15,10 @@ import { SkilsComponent } from './components/skils/skils.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule} from '@angular/forms';
 import { interceptorProvider } from './services/interceptor-service';
 import { NewExpComponent } from './components/new-exp/new-exp.component';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { defineLocale } from 'ngx-bootstrap/chronos';
-import { esLocale } from 'ngx-bootstrap/locale';
 import { EditExpComponent } from './components/edit-exp/edit-exp.component';
 import { NewEduComponent } from './components/new-edu/new-edu.component';
 import { EditEduComponent } from './components/edit-edu/edit-edu.component';
@@ -31,7 +28,6 @@ import { EditSkillComponent } from './components/edit-skill/edit-skill.component
 import { NgpImagePickerModule } from 'ngp-image-picker';
 import { EditPerComponent } from './components/edit-per/edit-per.component';
 
-defineLocale('es', esLocale);
 
 @NgModule({
   declarations: [
@@ -58,8 +54,6 @@ defineLocale('es', esLocale);
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    BsDatepickerModule.forRoot(),
-    ReactiveFormsModule,
     ColorPickerModule,
     NgpImagePickerModule
     
