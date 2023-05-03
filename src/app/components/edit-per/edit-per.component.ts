@@ -40,8 +40,11 @@ export class EditPerComponent {
     }, err =>{
         alert("Fallo la modificacion de la Persona");
         this.router.navigate(['']);
-    })
-                                  
+    })                               
+  }
+
+  onAction($event : any){
+    
   }
 
 

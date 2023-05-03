@@ -44,5 +44,9 @@ export class EditSkillComponent {
                                   
   }
 
+  onAction($event : any){
+    
+  }
+
 }
 

@@ -58,13 +58,18 @@
                                     <label class="form-label">Color Interior</label>
                                     <input style="width: 50px;" [(colorPicker)]="innerColor" [style.background]="innerColor" />
                                 </div>
+                                <div class="row">
+                                    <div class="col-mb-4">
+                                        <div class="mb-4 " form-gruop>
+                                            <label class="form-label">Imagen</label>
+                                            <input type="file" class="form-control" id="img" name="img" [(ngModel)]="img"
+                                            (change)="onAction($event)" accept=".png, .jpg, .jpeg"/>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>  
                         </div>       
-                        <div style="margin-top: 20px;">
-                            <div class="row">
-                                <ngp-image-picker [_config]="Conf" ></ngp-image-picker>
-                            </div>  
-                        </div>
+                       
                         <div style="margin-top: 20px;">
                             <div class="row">
                                 <button class="btn btn-outline-light btn-lg px-5" type="submit">Terminar</button>

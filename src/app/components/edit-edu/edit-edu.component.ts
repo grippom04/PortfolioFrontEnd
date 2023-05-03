@@ -47,5 +47,8 @@ onEdit():void{
   })
                                
 }
+onAction($event : any){
+    
+}
 
 }

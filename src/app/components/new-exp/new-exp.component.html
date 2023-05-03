@@ -58,6 +58,15 @@
                         </div>
                       </div>
                     </div>
+                    <div class="row">
+                      <div class="col-mb-4">
+                          <div class="mb-4 " form-gruop>
+                              <label class="form-label">Imagen</label>
+                              <input type="file" class="form-control" id="img" name="img" [(ngModel)]="img"
+                              (change)="onAction($event)" accept=".png, .jpg, .jpeg"/>
+                          </div>
+                      </div>
+                  </div> 
 
                   </div>
                   <button class="btn btn-outline-light btn-lg px-5" type="submit">Terminar</button>

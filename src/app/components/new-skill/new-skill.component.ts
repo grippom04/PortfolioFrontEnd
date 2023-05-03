@@ -38,13 +38,11 @@ export class NewSkillComponent {
                                    
   }
 
-  Conf: ImagePickerConf  = {
-    borderRadius: '4px',
-    language: 'en',
-    width: '320px',
-    height: '240px',
-  };
+  onAction($event : any){
+    
+  }
 
+  
 }
 
 

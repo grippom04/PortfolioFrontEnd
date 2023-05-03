@@ -34,6 +34,10 @@ onCreate():void{
                              
 }
 
+onAction($event : any){
+    
+}
+
 }
 
 
